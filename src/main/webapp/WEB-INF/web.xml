@@ -4,7 +4,8 @@
 
 <web-app>
 	
-	<display-name>Hellow</display-name>
+	
+	<display-name>Hellsdsow</display-name>
 	<welcome-file-list>
 		<welcome-file>jsp/html.jsp</welcome-file>
 	</welcome-file-list>
