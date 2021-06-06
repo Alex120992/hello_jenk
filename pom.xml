@@ -63,9 +63,8 @@
         </plugin>
       </plugins>
     </pluginManagement>
-  </build>
-   <build>
-        <finalName>web-app-name</finalName>
+  
+      
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -75,6 +74,7 @@
                     <webXml>web\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
+    </plugins>
+    </build>	
+    
 </project>
