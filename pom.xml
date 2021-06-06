@@ -74,8 +74,9 @@
                     <webXml>web\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
-    </plugins>
-    </pluginManagment>
+	    
+   		 </plugins>
+   	 </pluginManagment>
     </build>	
     
 </project>
