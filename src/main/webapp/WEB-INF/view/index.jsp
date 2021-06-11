@@ -10,7 +10,7 @@
 создаем форму для ошибок--%>
 <form:form action="sendmail" modelAttribute="personData" method="get">
 
-    <form:input path="name" type="text" placeholder="Введите Ваше имя"/>
+    <form:input path="name" type="text" placeholder="Введите Ваше имя Алексей"/>
     <form:errors path="name"/>
     <br>
     <form:input path="mail" type="email" placeholder="Введите Вашу почту"/>
