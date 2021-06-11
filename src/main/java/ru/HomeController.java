@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.sql.*;
+import java.util.Properties;
 
 
 /**
@@ -22,7 +24,27 @@ public class HomeController {
 
     @RequestMapping("/")
     public String homePage(Model model) {
-        model.addAttribute("personData", new PersonData());
+        String a;
+        PersonData personData;
+
+        String url = "jdbc:postgresql://localhost/alex";
+        Properties props = new Properties();
+        props.setProperty("user","postgres");
+        props.setProperty("password","1234");
+        props.setProperty("ssl","true");
+        try( Connection conn = DriverManager.getConnection(url, props)) {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT name FROM andersen");
+            a = resultSet.getString(1);
+            personData = new PersonData();
+            personData.setName(a);
+            model.addAttribute("personData", personData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
         return "index";
     }
 
@@ -42,4 +64,6 @@ public class HomeController {
             return "greeting-message";
         }
     }
+
+
 }
